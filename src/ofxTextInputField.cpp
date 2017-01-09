@@ -338,12 +338,12 @@ void ofxTextInputField::mouseReleased(ofMouseEventArgs& args){
 
 void ofxTextInputField::setClipboard(string clippy)
 {
-	glfwSetClipboardString( (GLFWwindow*) ofGetWindowPtr()->getCocoaWindow(), clippy.c_str());
+	glfwSetClipboardString( (GLFWwindow*) ofGetWindowPtr()->getWin32Window(), clippy.c_str());
 }
 
 string ofxTextInputField::getClipboard()
 {
-	const char *clip = glfwGetClipboardString((GLFWwindow*) ofGetWindowPtr()->getCocoaWindow());
+	const char *clip = glfwGetClipboardString((GLFWwindow*) ofGetWindowPtr()->getWin32Window());
 	if(clip!=NULL) {
 		return string(clip);
 	} else {
